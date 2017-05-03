@@ -29,5 +29,7 @@
     <ion-label stacked>City</ion-label>
     <ion-input [(ngModel)]="city" type="text" placeholder="Fill your city"></ion-input>
   </ion-item>
-  <button block (click)="addContact(name, address, phone, city)"> Add Contact </button>
+  <div class="addContactButton">
+    <button ion-button block (click)="addContact(name, address, phone, city)"> Add Contact </button>
+  </div>
 </ion-content>
