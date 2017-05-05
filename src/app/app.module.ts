@@ -10,7 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { AddContact } from '../pages/add-contact/add-contact';
 import { Login } from '../pages/login/login';
 import { ResetPassword } from '../pages/reset-password/reset-password';
-import { Signup } from '../pages/signup/signup';
+import { SignupPage } from '../pages/signup/signup';
 
 
 //Import Providers
@@ -45,7 +45,7 @@ const myFirebaseAuthConfig = {
     AddContact,
     Login,
     ResetPassword,
-    Signup
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +63,7 @@ const myFirebaseAuthConfig = {
     AddContact,
     Login,
     ResetPassword,
-    Signup
+    SignupPage
   ],
   providers: [
     StatusBar,

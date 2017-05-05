@@ -14,7 +14,7 @@ import firebase from 'firebase';
 export class AuthData {
   fireAuth: any;
 
-  constructor(af: AngularFire) {
+  constructor(public af: AngularFire) {
     af.auth.subscribe( user => {
             if (user) {
                 this.fireAuth = user.auth;
@@ -36,7 +36,7 @@ export class AuthData {
   }
 
   signupUser(newEmail: string, newPassword: string): firebase.Promise<any> {
-    return this.af.auth.createUser({ 
+    return this.af.auth.createUser({
       email: newEmail,
       password: newPassword
     });
