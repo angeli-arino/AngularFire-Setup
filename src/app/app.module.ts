@@ -8,12 +8,18 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AddContact } from '../pages/add-contact/add-contact';
+import { Login } from '../pages/login/login';
+import { ResetPassword } from '../pages/reset-password/reset-password';
+import { Signup } from '../pages/signup/signup';
 
+
+//Import Providers
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AuthData } from '../providers/auth-data';
 
 // Import the AF2 Module
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 // AF2 Settings
 export const firebaseConfig = {
@@ -24,6 +30,11 @@ export const firebaseConfig = {
   messagingSenderId: "740177406991"
 };
 
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
+}
+
 @NgModule({
   declarations: [
     MyApp,
@@ -31,12 +42,16 @@ export const firebaseConfig = {
     ContactPage,
     HomePage,
     TabsPage,
-    AddContact
+    AddContact,
+    Login,
+    ResetPassword,
+    Signup
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig,
+    myFirebaseAuthConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,11 +60,15 @@ export const firebaseConfig = {
     ContactPage,
     HomePage,
     TabsPage,
-    AddContact
+    AddContact,
+    Login,
+    ResetPassword,
+    Signup
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    AuthData,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
