@@ -14,7 +14,7 @@ import { AngularFire } from 'angularfire2';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any;
+  rootPage: any;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
   public af: AngularFire) {

@@ -3,7 +3,7 @@ import { NavController, LoadingController, AlertController } from 'ionic-angular
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 import { EmailValidator } from '../../validators/email';
-import { TabsPage } from '../pages/tabs/tabs';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-signup',
@@ -35,7 +35,9 @@ export class SignupPage {
     } else {
       this.authData.signupUser(this.signupForm.value.email, this.signupForm.value.password)
       .then(() => {
+        this.loading.dismiss().then(() => {
         this.nav.setRoot(TabsPage);
+        })
       }, (error) => {
         this.loading.dismiss().then( () => {
           var errorMessage: string = error.message;
