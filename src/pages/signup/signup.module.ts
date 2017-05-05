@@ -4,10 +4,10 @@ import { SignupPage } from './signup';
 
 @NgModule({
   declarations: [
-    Signup,
+    SignupPage,
   ],
   imports: [
-    IonicPageModule.forChild(Signup),
+    IonicPageModule.forChild(SignupPage),
   ],
   exports: [
     SignupPage
