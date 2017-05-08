@@ -14,7 +14,8 @@
 <ion-content>
   <ion-list>
     <ion-list-header>My Contacts</ion-list-header>
-    <ion-item *ngFor="let contact of contactList | async">
+    <ion-item *ngFor="let contact of contactList | async"
+    (click) = "callNumber(contact.phone)">
       <ion-icon name="book" danger item-left></ion-icon>
       <h2>{{contact.name}}</h2>
       <h3>Address: {{contact.address}}, {{contact.city}}</h3>

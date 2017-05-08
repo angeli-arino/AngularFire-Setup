@@ -5,6 +5,8 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import { AddContact } from '../add-contact/add-contact';
 
+declare var window;
+
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -18,5 +20,9 @@ export class ContactPage {
 
   addContact(){
     this.navCtrl.push(AddContact);
+  }
+
+  callNumber(passedNo) {
+    window.location = "tel:" + passedNo
   }
 }
