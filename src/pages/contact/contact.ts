@@ -19,4 +19,8 @@ export class ContactPage {
   addContact(){
     this.navCtrl.push(AddContact);
   }
+
+  callPhone(passedNo) {
+    window.location = passedNo
+  }
 }
