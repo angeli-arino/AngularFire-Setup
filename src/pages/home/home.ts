@@ -10,10 +10,11 @@ import { Login } from '../login/login';
   templateUrl: 'home.html'
 })
 export class HomePage {
+
   constructor(public navCtrl: NavController, public authData: AuthData) {
   }
 
-  logOut() {
+  logout() {
     this.authData.logoutUser().then( authData =>
     {this.navCtrl.setRoot(Login);});
   }
