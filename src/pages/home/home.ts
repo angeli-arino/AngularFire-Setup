@@ -5,17 +5,20 @@ import { AuthData } from '../../providers/auth-data';
 
 import { Login } from '../login/login';
 
+import {App} from 'ionic-angular';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public authData: AuthData) {
+  constructor(public navCtrl: NavController, public authData: AuthData,
+  public app: App) {
   }
 
   logout() {
     this.authData.logoutUser().then( authData =>
-    {this.navCtrl.setRoot(Login);});
+    {this.app.getRootNav().setRoot(Login);});
   }
 }
