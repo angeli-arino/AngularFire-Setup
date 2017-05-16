@@ -5,12 +5,13 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { HomePage, PopoverPage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AddContact } from '../pages/add-contact/add-contact';
 import { Login } from '../pages/login/login';
 import { ResetPassword } from '../pages/reset-password/reset-password';
 import { SignupPage } from '../pages/signup/signup';
+import { Choice } from '../pages/choice/choice';
 
 
 //Import Providers
@@ -45,7 +46,9 @@ const myFirebaseAuthConfig = {
     AddContact,
     Login,
     ResetPassword,
-    SignupPage
+    SignupPage,
+    PopoverPage,
+    Choice
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,9 @@ const myFirebaseAuthConfig = {
     AddContact,
     Login,
     ResetPassword,
-    SignupPage
+    SignupPage,
+    PopoverPage,
+    Choice
   ],
   providers: [
     StatusBar,
