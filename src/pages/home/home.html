@@ -10,26 +10,29 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-background-page">
-  <ion-card>
-    <ion-card-header>
-      Welcome to UCIRO Health and Safety App!
-    </ion-card-header>
-    <ion-card-content>
-      Please Select a Trip from the following
-    </ion-card-content>
-  </ion-card>
+<ion-content>
 
-  <ion-card>
-    <img src="img/thailand.jpg"/>
-    <div class="card-title">Thailand Trip</div>
-    <div class="card-subtitle"> ราชอาณาจักรไทย,</div>
-  </ion-card>
+      <ion-card type = "button" (click) = showInfo()>
+        <ion-card-header>
+          Important Travel Information
+        </ion-card-header>
+        <ion-card-content>
+          Several key points about travelling that you need to remember.
+        </ion-card-content>
+      </ion-card>
 
-  <ion-card>
-    <img src="img/china.jpg"/>
-    <div class="card-title">China Trip</div>
-    <div class="card-subtitle">中国</div>
-  </ion-card>
+      <ion-card>
+        <ion-card-header>
+          Risk Identification and Management
+        </ion-card-header>
+        <ion-card-content>
+        A list of different risks and how to avoid them.
+        </ion-card-content>
+      </ion-card>
+
+
+
+
+
 
 </ion-content>

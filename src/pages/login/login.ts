@@ -9,6 +9,7 @@ import { AuthData } from '../../providers/auth-data';
 //Import pages
 import { TabsPage } from '../tabs/tabs';
 import { SignupPage } from '../signup/signup';
+import { Choice } from '../choice/choice';
 import { ResetPassword } from '../reset-password/reset-password';
 
 //Email validator.
@@ -47,7 +48,7 @@ export class Login {
     } else {
       this.authData.loginUser(this.loginForm.value.email,
         this.loginForm.value.password).then( authData => {
-          this.navCtrl.setRoot(TabsPage);
+          this.navCtrl.setRoot(Choice);
     }, error => {
       this.loading.dismiss().then( () => {
         let alert = this.alertCtrl.create({
