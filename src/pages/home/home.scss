@@ -1,5 +1,14 @@
 page-home {
+
+
   .card-background-page {
+
+    background-color: #F4F4F7;
+
+    ion-card-header {
+      font-weight: bold;
+    }
+
 
     ion-card {
       position: relative;
@@ -25,7 +34,5 @@ page-home {
 
   }
 
-  ion-slides {
-    height: initial;
-  }
+
 }

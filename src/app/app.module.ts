@@ -13,6 +13,7 @@ import { ResetPassword } from '../pages/reset-password/reset-password';
 import { SignupPage } from '../pages/signup/signup';
 import { Choice } from '../pages/choice/choice';
 import { Info } from '../pages/info/info';
+import { Risk } from '../pages/risk/risk';
 
 
 //Import Providers
@@ -50,7 +51,8 @@ const myFirebaseAuthConfig = {
     SignupPage,
     PopoverPage,
     Choice,
-    Info
+    Info,
+    Risk
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ const myFirebaseAuthConfig = {
     SignupPage,
     PopoverPage,
     Choice,
-    Info
+    Info,
+    Risk
   ],
   providers: [
     StatusBar,
