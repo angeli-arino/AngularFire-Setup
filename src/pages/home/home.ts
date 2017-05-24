@@ -5,6 +5,7 @@ import { PopoverController, ViewController } from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 
 import { Login } from '../login/login';
+import { Info } from '../info/info';
 
 import {App} from 'ionic-angular';
 
@@ -41,6 +42,10 @@ export class HomePage {
   logout() {
     this.authData.logoutUser().then( authData =>
     {this.app.getRootNav().setRoot(Login);});
+  }
+
+  showInfo() {
+    this.navCtrl.push(Info);
   }
 
   presentPopover(myEvent) {
