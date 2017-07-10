@@ -6,6 +6,7 @@ import { AuthData } from '../../providers/auth-data';
 
 import { Login } from '../login/login';
 import { Info } from '../info/info';
+import { Risk } from '../risk/risk';
 
 import {App} from 'ionic-angular';
 
@@ -46,6 +47,10 @@ export class HomePage {
 
   showInfo() {
     this.navCtrl.push(Info);
+  }
+
+  showRisks() {
+    this.navCtrl.push(Risk)
   }
 
   presentPopover(myEvent) {

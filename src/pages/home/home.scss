@@ -1,9 +1,19 @@
 page-home {
+
+
   .card-background-page {
 
+    background-color: #F4F4F7;
+
+    ion-card-header {
+      font-weight: bold;
+    }
+
+
     ion-card {
-      position: relative;
+      position: center;
       text-align: center;
+      
     }
 
     .card-title {
@@ -25,7 +35,5 @@ page-home {
 
   }
 
-  ion-slides {
-    height: initial;
-  }
+
 }
