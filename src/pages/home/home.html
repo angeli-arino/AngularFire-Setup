@@ -12,6 +12,12 @@
 
 <ion-content class = "card-background-page">
 
+      <ion-card type = "button" (click) = showCountry()>
+        <ion-card-header>
+          Thailand
+        </ion-card-header>
+      </ion-card>
+
       <ion-card type = "button" (click) = showInfo()>
         <ion-card-header>
           Important Travel Information
@@ -27,6 +33,15 @@
         </ion-card-header>
         <ion-card-content>
         A list of different risks and how to avoid them.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card type = "button" (click) = showLingo()>
+        <ion-card-header>
+          Local Lingo
+        </ion-card-header>
+        <ion-card-content>
+          Helpful local phrases in everyday life.
         </ion-card-content>
       </ion-card>
 
