@@ -52,7 +52,7 @@ const myFirebaseAuthConfig = {
     PopoverPage,
     Choice,
     Info,
-    Risk
+    Risk,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +74,7 @@ const myFirebaseAuthConfig = {
     PopoverPage,
     Choice,
     Info,
-    Risk
+    Risk,
   ],
   providers: [
     StatusBar,

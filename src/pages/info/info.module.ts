@@ -10,7 +10,7 @@ import { Info } from './info';
     IonicPageModule.forChild(Info),
   ],
   exports: [
-    Info
+    Info,
   ]
 })
 export class InfoModule {}

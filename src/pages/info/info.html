@@ -20,17 +20,17 @@
     </ion-card-header>
 
     <ion-list>
-      <button ion-item>
+      <button ion-item (click)="openModal(0)">
         <ion-icon name="arrow-forward" item-right></ion-icon>
         Safe Travel
       </button>
 
-      <button ion-item>
+      <button ion-item (click)="openModal(1)">
         <ion-icon name="arrow-forward" item-right></ion-icon>
         Documentation
       </button>
 
-      <button ion-item>
+      <button ion-item (click)="openModal(2)">
         <ion-icon name="arrow-forward" item-right></ion-icon>
         Photo Identification
       </button>
