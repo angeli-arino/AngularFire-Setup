@@ -13,6 +13,8 @@
 
 <ion-content>
   <ion-list>
+    <ion-list-header>Key Contacts</ion-list-header>
+    
     <ion-list-header>My Contacts</ion-list-header>
     <ion-item *ngFor="let contact of contactList | async"
     (click) = "callNumber(contact.phone)">
