@@ -19,4 +19,14 @@
     </ion-card-content>
   </ion-card>
 
+  <ion-card *ngFor = "let alert of alertList | async">
+    <ion-card-header>
+      {{alert.name}}
+    </ion-card-header>
+    <ion-card-content>
+      {{alert.message}}
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>

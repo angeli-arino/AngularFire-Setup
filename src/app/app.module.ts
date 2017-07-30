@@ -14,6 +14,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { Choice } from '../pages/choice/choice';
 import { Info } from '../pages/info/info';
 import { Risk } from '../pages/risk/risk';
+import { CountryPage } from '../pages/country-page/country-page';
 
 
 //Import Providers
@@ -52,7 +53,8 @@ const myFirebaseAuthConfig = {
     PopoverPage,
     Choice,
     Info,
-    Risk
+    Risk,
+    CountryPage
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ const myFirebaseAuthConfig = {
     PopoverPage,
     Choice,
     Info,
-    Risk
+    Risk,
+    CountryPage
   ],
   providers: [
     StatusBar,
