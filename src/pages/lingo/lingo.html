@@ -1,5 +1,5 @@
 <!--
-  Generated template for the Info page.
+  Generated template for the Lingo page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color = "primary">
-    <ion-title>Important Travel Information</ion-title>
+    <ion-title>Local Lingo</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,16 +16,13 @@
 <ion-content class = "bg">
   <ion-card>
     <ion-card-header color = "primary">
-      Important Travel Information
+      Local Lingo
     </ion-card-header>
     <ion-list>
-      <button ion-item *ngFor="let info of allinfoList | async">
+      <button ion-item *ngFor="let lingo of localLingo | async">
         <ion-icon name="arrow-forward" item-right></ion-icon>
-        {{info.travel}}
+        {{lingo.word}}
       </button>
-
-
-
     </ion-list>
   </ion-card>
 

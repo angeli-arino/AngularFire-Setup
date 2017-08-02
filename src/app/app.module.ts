@@ -15,6 +15,7 @@ import { Choice } from '../pages/choice/choice';
 import { Info } from '../pages/info/info';
 import { Risk } from '../pages/risk/risk';
 import { CountryPage } from '../pages/country-page/country-page';
+import { Lingo } from '../pages/lingo/lingo';
 
 
 //Import Providers
@@ -54,7 +55,8 @@ const myFirebaseAuthConfig = {
     Choice,
     Info,
     Risk,
-    CountryPage
+    CountryPage,
+    Lingo
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,8 @@ const myFirebaseAuthConfig = {
     Choice,
     Info,
     Risk,
-    CountryPage
+    CountryPage,
+    Lingo
   ],
   providers: [
     StatusBar,

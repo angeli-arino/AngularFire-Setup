@@ -8,6 +8,7 @@ import { Login } from '../login/login';
 import { Info } from '../info/info';
 import { Risk } from '../risk/risk';
 import { CountryPage } from '../country-page/country-page';
+import { Lingo } from '../lingo/lingo';
 
 import {App} from 'ionic-angular';
 
@@ -56,6 +57,10 @@ export class HomePage {
 
   showCountry() {
     this.navCtrl.push(CountryPage)
+  }
+
+  showLingo() {
+    this.navCtrl.push(Lingo)
   }
 
   presentPopover(myEvent) {
