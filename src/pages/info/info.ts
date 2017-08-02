@@ -76,11 +76,10 @@ export class Info {
 
   }
 
-  openModal(numGiven) {
-    this.currentInfo = this.myInfo[Number(numGiven*1)];
-    console.log(this.currentInfo);
+  openModal(info) {
+    this.infoList = { title: info.travel, details: info.travelInfo };
 
-    const myModal = this.modalCtrl.create('ModalPage', { data : this.currentInfo});
+    const myModal = this.modalCtrl.create('ModalPage', { data : this.infoList});
     myModal.present();
   }
 }

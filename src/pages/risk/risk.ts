@@ -31,8 +31,9 @@ export class Risk {
 
   }
 
-  openModal(numGiven) {
-    this.currentRisk = this.myRisk[Number(numGiven*1)];
+  openModal(risk) {
+    this.currentRisk = { title: risk.risk, details: risk.riskInfo };
+
 
     const myModal = this.modalCtrl.create('ModalPage', { data : this.currentRisk});
     myModal.present();

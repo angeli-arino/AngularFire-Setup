@@ -22,7 +22,8 @@
 
   <ion-list>
 
-    <button ion-item *ngFor="let info of allriskList | async">
+    <button ion-item *ngFor="let info of allriskList | async"
+    (click) = "openModal(info)">
       <ion-icon name="arrow-forward" item-right></ion-icon>
       {{info.risk}}
     </button>

@@ -19,7 +19,8 @@
       Local Lingo
     </ion-card-header>
     <ion-list>
-      <button ion-item *ngFor="let lingo of localLingo | async">
+      <button ion-item *ngFor="let lingo of localLingo | async"
+      (click) = "openModal(lingo)">>
         <ion-icon name="arrow-forward" item-right></ion-icon>
         {{lingo.word}}
       </button>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /**
@@ -16,14 +16,22 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class Lingo {
 
   localLingo: FirebaseListObservable<any>;
+  lingo;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  public modalCtrl: ModalController) {
     this.localLingo = af.database.list('/localLingo');
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Lingo');
+  }
+  openModal(info) {
+    this.lingo = { title: info.word, details: info.meaning };
+
+    const myModal = this.modalCtrl.create('ModalPage', { data : this.lingo});
+    myModal.present();
   }
 
 }

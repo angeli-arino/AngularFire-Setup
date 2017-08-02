@@ -19,13 +19,11 @@
       Important Travel Information
     </ion-card-header>
     <ion-list>
-      <button ion-item *ngFor="let info of allinfoList | async">
+      <button ion-item *ngFor="let info of allinfoList | async"
+      (click) = "openModal(info)">
         <ion-icon name="arrow-forward" item-right></ion-icon>
         {{info.travel}}
       </button>
-
-
-
     </ion-list>
   </ion-card>
 
