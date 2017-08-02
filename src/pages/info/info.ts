@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'page-info',
@@ -7,6 +8,10 @@ import { ModalController, Platform, NavParams, ViewController } from 'ionic-angu
 })
 
 export class Info {
+
+  allinfoList: FirebaseListObservable<any>;
+  infoList;
+
   currentInfo;
   myInfo = [
           {
@@ -66,7 +71,8 @@ export class Info {
 
         ];
 
-  constructor(public modalCtrl: ModalController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController, public navParams: NavParams, public af: AngularFire) {
+    this.allinfoList = af.database.list('/travelInfo');
 
   }
 

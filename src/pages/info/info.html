@@ -18,62 +18,14 @@
     <ion-card-header color = "primary">
       Important Travel Information
     </ion-card-header>
-
     <ion-list>
-      <button ion-item (click)="openModal(0)">
+
+      <button ion-item *ngFor="let info of allinfoList | async">
         <ion-icon name="arrow-forward" item-right></ion-icon>
-        Safe Travel
+        {{info.travel}}
       </button>
 
-      <button ion-item (click)="openModal(1)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Documentation
-      </button>
 
-      <button ion-item (click)="openModal(2)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Photo Identification
-      </button>
-
-      <button ion-item (click)="openModal(3)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Medical Supplies
-      </button>
-
-      <button ion-item (click)="openModal(4)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Liquids, aerosols, pastes and gels
-      </button>
-
-      <button ion-item (click)="openModal(5)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Vaccinations
-      </button>
-
-      <button ion-item (click)="openModal(6)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Personal Travel and Excursions
-      </button>
-
-      <button ion-item (click)="openModal(7)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Baggage
-      </button>
-
-      <button ion-item (click)="openModal(8)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Cellphones
-      </button>
-
-      <button ion-item (click)="openModal(9)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Emergency
-      </button>
-
-      <button ion-item (click)="openModal(10)">
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-        Insurance
-      </button>
 
     </ion-list>
   </ion-card>

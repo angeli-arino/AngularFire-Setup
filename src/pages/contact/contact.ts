@@ -13,9 +13,11 @@ declare var window;
 })
 export class ContactPage {
   contactList: FirebaseListObservable<any>;
+  keyContacts: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public af: AngularFire) {
     this.contactList = af.database.list('/contacts');
+    this.keyContacts = af.database.list('/keyContacts');
   }
 
   addContact(){
