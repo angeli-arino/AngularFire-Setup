@@ -16,6 +16,7 @@ import { Info } from '../pages/info/info';
 import { Risk } from '../pages/risk/risk';
 import { CountryPage } from '../pages/country-page/country-page';
 import { Lingo } from '../pages/lingo/lingo';
+import { Word } from '../pages/word/word';
 
 
 //Import Providers
@@ -56,7 +57,8 @@ const myFirebaseAuthConfig = {
     Info,
     Risk,
     CountryPage,
-    Lingo
+    Lingo,
+    Word
   ],
   imports: [
     BrowserModule,
@@ -80,7 +82,8 @@ const myFirebaseAuthConfig = {
     Info,
     Risk,
     CountryPage,
-    Lingo
+    Lingo,
+    Word
   ],
   providers: [
     StatusBar,

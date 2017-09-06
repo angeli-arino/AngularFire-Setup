@@ -15,6 +15,8 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class Risk {
   currentRisk;
   allriskList: FirebaseListObservable<any>;
+  id;
+
   myRisk = [
     {
       name: 'NZ Safe Travel Advisory',
@@ -28,13 +30,11 @@ export class Risk {
 
   constructor(public modalCtrl: ModalController, public navParams: NavParams, public af: AngularFire) {
     this.allriskList = af.database.list('/riskInfo');
-
+    this.id = navParams.get('travelID');
   }
 
   openModal(risk) {
     this.currentRisk = { title: risk.risk, details: risk.riskInfo };
-
-
     const myModal = this.modalCtrl.create('ModalPage', { data : this.currentRisk});
     myModal.present();
   }

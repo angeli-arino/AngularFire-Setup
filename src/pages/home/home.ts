@@ -49,19 +49,19 @@ export class HomePage {
   }
 
   showInfo() {
-    this.navCtrl.push(Info);
+    this.navCtrl.push(Info, {travelID: this.id});
   }
 
   showRisks() {
-    this.navCtrl.push(Risk);
+    this.navCtrl.push(Risk, {travelID: this.id});
   }
 
   showCountry() {
-    this.navCtrl.push(CountryPage)
+    this.navCtrl.push(CountryPage, {travelID: this.id});
   }
 
   showLingo() {
-    this.navCtrl.push(Lingo)
+    this.navCtrl.push(Lingo, {travelID: this.id});
   }
 
   showChoice() {

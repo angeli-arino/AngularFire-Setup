@@ -11,6 +11,7 @@ export class Info {
 
   allinfoList: FirebaseListObservable<any>;
   infoList;
+  id;
 
   currentInfo;
   myInfo = [
@@ -73,7 +74,8 @@ export class Info {
 
   constructor(public modalCtrl: ModalController, public navParams: NavParams, public af: AngularFire) {
     this.allinfoList = af.database.list('/travelInfo');
-
+    this.id = this.navParams.get('travelID');
+    console.log(this.id);
   }
 
   openModal(info) {

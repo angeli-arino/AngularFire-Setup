@@ -2,12 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
-/**
- * Generated class for the Lingo page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { Word } from '../word/word';
+
 @IonicPage()
 @Component({
   selector: 'page-lingo',
@@ -15,23 +11,25 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class Lingo {
 
-  localLingo: FirebaseListObservable<any>;
+  tripLanguageList: FirebaseListObservable<any>;
   lingo;
+  id;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
   public modalCtrl: ModalController) {
-    this.localLingo = af.database.list('/localLingo');
-
+    this.id = navParams.get('travelID');
+    this.tripLanguageList = af.database.list('/tripLanguage', {
+      query: {
+        orderByChild : 'travelID',
+        equalTo: this.id
+        }
+      });
+    console.log(this.id);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Lingo');
-  }
-  openModal(info) {
-    this.lingo = { title: info.word, details: info.meaning };
+  openWord(language) {
+    this.navCtrl.push(Word, {language: language});
 
-    const myModal = this.modalCtrl.create('ModalPage', { data : this.lingo});
-    myModal.present();
   }
 
 }

@@ -15,8 +15,15 @@
   <ion-list>
     <ion-list-header><h2>Key Contacts</h2></ion-list-header>
 
-    <ion-item *ngFor="let contact of keyContacts | async"
-    (click) = "callNumber(contact.phone)">
+    <ion-item *ngFor="let contact of keyContacts | async">
+    <ion-fab mini right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side = "left">
+      <button ion-fab (click) = "callNumber(contact.phone)"><ion-icon name="call"></ion-icon></button>
+      <button ion-fab><ion-icon name="mail"></ion-icon></button>
+      <button ion-fab><ion-icon name="locate"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
       <ion-icon name="book" danger item-left></ion-icon>
       <h2>{{contact.name}}</h2>
       <h3>Address: {{contact.email}} </h3>

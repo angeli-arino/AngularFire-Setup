@@ -16,13 +16,13 @@
 <ion-content class = "bg">
   <ion-card>
     <ion-card-header color = "primary">
-      Local Lingo
+      Languages Available
     </ion-card-header>
     <ion-list>
-      <button ion-item *ngFor="let lingo of localLingo | async"
-      (click) = "openModal(lingo)">>
+      <button ion-item *ngFor="let language of tripLanguageList | async"
+      (click) = "openWord(language.languages)">>
         <ion-icon name="arrow-forward" item-right></ion-icon>
-        {{lingo.word}}
+        {{language.languages}}
       </button>
     </ion-list>
   </ion-card>
