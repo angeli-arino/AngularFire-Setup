@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PopoverController, ViewController } from 'ionic-angular';
+import { PopoverController, NavParams, ViewController } from 'ionic-angular';
 
 import { AuthData } from '../../providers/auth-data';
 
@@ -9,6 +9,7 @@ import { Info } from '../info/info';
 import { Risk } from '../risk/risk';
 import { CountryPage } from '../country-page/country-page';
 import { Lingo } from '../lingo/lingo';
+import { Choice } from '../choice/choice';
 
 import {App} from 'ionic-angular';
 
@@ -25,21 +26,21 @@ import {App} from 'ionic-angular';
 })
 export class PopoverPage {
   constructor(public viewCtrl: ViewController) {}
-
   close() {
     this.viewCtrl.dismiss();
   }
 }
-
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  id;
 
   constructor(public navCtrl: NavController, public authData: AuthData,
-  public app: App, public popoverCtrl: PopoverController) {
+  public app: App, public popoverCtrl: PopoverController, public navParams: NavParams) {
+    this.id = navParams.get('travelID');
   }
 
   logout() {
@@ -61,6 +62,10 @@ export class HomePage {
 
   showLingo() {
     this.navCtrl.push(Lingo)
+  }
+
+  showChoice() {
+    this.app.getRootNav().setRoot(Choice);
   }
 
   presentPopover(myEvent) {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 //Pages
 import { TabsPage } from '../tabs/tabs';
@@ -17,20 +18,25 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'choice.html',
 })
 export class Choice {
+  travelPlanList: FirebaseListObservable<any>;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+    this.travelPlanList = af.database.list('/tripPlan');
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Choice');
   }
 
   chooseThai() {
-
   this.navCtrl.setRoot(TabsPage);
+  }
 
-
+  loadTravelPlan(travelPlan) {
+    console.log(travelPlan.id);
+    this.navCtrl.setRoot(TabsPage, {travelID: travelPlan.id});
   }
 
   chooseChina() {
