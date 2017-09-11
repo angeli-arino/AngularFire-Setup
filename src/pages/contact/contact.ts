@@ -19,7 +19,6 @@ export class ContactPage {
 
   constructor(public navCtrl: NavController, public af: AngularFire,
   public navParams: NavParams) {
-    console.log(navParams.get('travelID'));
     this.id = navParams.get('travelID');
     this.contactList = af.database.list('/contacts');
     this.keyContacts = af.database.list('/keyContacts', {

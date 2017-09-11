@@ -30,19 +30,10 @@ export class Choice {
     console.log('ionViewDidLoad Choice');
   }
 
-  chooseThai() {
-  this.navCtrl.setRoot(TabsPage);
-  }
-
   loadTravelPlan(travelPlan) {
     localStorage.setItem("travelID", travelPlan.id);
     console.log(travelPlan.id);
     this.navCtrl.setRoot(TabsPage, {travelID: travelPlan.id});
-  }
-
-  chooseChina() {
-  this.navCtrl.setRoot(TabsPage);
-
   }
 
 }

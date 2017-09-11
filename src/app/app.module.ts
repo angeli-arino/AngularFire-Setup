@@ -17,7 +17,7 @@ import { Risk } from '../pages/risk/risk';
 import { CountryPage } from '../pages/country-page/country-page';
 import { Lingo } from '../pages/lingo/lingo';
 import { Word } from '../pages/word/word';
-
+import { Travelinfo } from '../pages/travelinfo/travelinfo';
 
 //Import Providers
 import { StatusBar } from '@ionic-native/status-bar';
@@ -58,7 +58,8 @@ const myFirebaseAuthConfig = {
     Risk,
     CountryPage,
     Lingo,
-    Word
+    Word,
+    Travelinfo
   ],
   imports: [
     BrowserModule,
@@ -83,7 +84,8 @@ const myFirebaseAuthConfig = {
     Risk,
     CountryPage,
     Lingo,
-    Word
+    Word,
+    Travelinfo
   ],
   providers: [
     StatusBar,

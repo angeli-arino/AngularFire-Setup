@@ -10,6 +10,7 @@ import { Risk } from '../risk/risk';
 import { CountryPage } from '../country-page/country-page';
 import { Lingo } from '../lingo/lingo';
 import { Choice } from '../choice/choice';
+import { Travelinfo } from '../travelinfo/travelinfo';
 
 import {App} from 'ionic-angular';
 
@@ -68,6 +69,10 @@ export class HomePage {
 
   showChoice() {
     this.app.getRootNav().setRoot(Choice);
+  }
+
+  showTravelInfo() {
+    this.navCtrl.push(Travelinfo);
   }
 
   presentPopover(myEvent) {

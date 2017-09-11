@@ -1,0 +1,31 @@
+
+<ion-header>
+  <ion-navbar color = "primary">
+    <ion-title>Travel Information</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background">
+  <div *ngFor="let tripPlan of tripList | async | slice:0:1">
+  <ion-card>
+    <ion-card-header>
+      Travel Dates
+    </ion-card-header>
+    <ion-card-content>
+      {{tripPlan.dateFrom}} to {{tripPlan.dateTo}}
+    </ion-card-content>
+  </ion-card>
+
+<ion-card>
+  <ion-card-header>
+    Accommodation
+  </ion-card-header>
+  <ion-card-content>
+    {{tripPlan.accommName}}
+    {{tripPlan.accommContact}}
+    {{tripPlan.accommAddress}}
+  </ion-card-content>
+  </ion-card>
+</div>
+
+</ion-content>
