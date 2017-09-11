@@ -18,6 +18,7 @@ export class Word {
   language;
   wordList: FirebaseListObservable<any>;
   audioElement;
+  buttonColor;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
     this.language = this.navParams.get('language');
@@ -41,7 +42,6 @@ export class Word {
     // Play Audio
     audioElement.play();
     audioElement.addEventListener("ended", function() {
-      console.log("ended");
     })
 
     }).catch(function(error) {

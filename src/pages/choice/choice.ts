@@ -35,6 +35,7 @@ export class Choice {
   }
 
   loadTravelPlan(travelPlan) {
+    localStorage.setItem("travelID", travelPlan.id);
     console.log(travelPlan.id);
     this.navCtrl.setRoot(TabsPage, {travelID: travelPlan.id});
   }

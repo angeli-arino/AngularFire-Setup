@@ -14,22 +14,23 @@
     </ion-fab-list>
     </ion-fab>
 
-      <ion-card type = "button" (click) = showCountry()>
+      <ion-card>
         <ion-card-header>
-          THAILAND
+          {{id}}
         </ion-card-header>
       </ion-card>
 
-      <ion-card type = "button" (click) = showInfo()>
-        <ion-card-header>
-          Important Travel Information
-        </ion-card-header>
-        <ion-card-content>
-          Several key points about travelling that you need to remember.
-        </ion-card-content>
-      </ion-card>
+        <ion-card class = "card-info" type = "button" (click) = showInfo()>
+          <ion-card-header>
+            Important Travel Information
+          </ion-card-header>
+          <ion-card-content>
+            Several key points about travelling that you need to remember.
+          </ion-card-content>
+        </ion-card>
 
-      <ion-card type = "button" (click) = showRisks()>
+
+      <ion-card class = "card-risk" type = "button" (click) = showRisks()>
         <ion-card-header>
           Risk Identification and Management
         </ion-card-header>
@@ -38,7 +39,7 @@
         </ion-card-content>
       </ion-card>
 
-      <ion-card type = "button" (click) = showLingo()>
+      <ion-card class = "card-lingo" type = "button" (click) = showLingo()>
         <ion-card-header>
           Local Lingo
         </ion-card-header>

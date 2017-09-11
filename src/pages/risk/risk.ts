@@ -31,6 +31,12 @@ export class Risk {
   constructor(public modalCtrl: ModalController, public navParams: NavParams, public af: AngularFire) {
     this.allriskList = af.database.list('/riskInfo');
     this.id = navParams.get('travelID');
+    this.allriskList = af.database.list('/riskInfo', {
+      query: {
+        orderByChild : 'travelID',
+        equalTo: this.id
+        }
+      });
   }
 
   openModal(risk) {

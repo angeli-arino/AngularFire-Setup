@@ -41,6 +41,8 @@ export class HomePage {
   constructor(public navCtrl: NavController, public authData: AuthData,
   public app: App, public popoverCtrl: PopoverController, public navParams: NavParams) {
     this.id = navParams.get('travelID');
+
+
   }
 
   logout() {

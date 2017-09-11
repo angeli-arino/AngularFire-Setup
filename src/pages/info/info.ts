@@ -75,7 +75,12 @@ export class Info {
   constructor(public modalCtrl: ModalController, public navParams: NavParams, public af: AngularFire) {
     this.allinfoList = af.database.list('/travelInfo');
     this.id = this.navParams.get('travelID');
-    console.log(this.id);
+    this.allinfoList = af.database.list('/travelInfo', {
+      query: {
+        orderByChild : 'travelID',
+        equalTo: this.id
+        }
+      });
   }
 
   openModal(info) {

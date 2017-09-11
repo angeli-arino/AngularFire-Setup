@@ -17,7 +17,7 @@
   <ion-list>
 
     <ion-item *ngFor="let word of wordList | async">
-      <ion-icon name="volume-up" danger item-right (click) = "loadAudio(word.id)"></ion-icon>
+      <ion-icon [style.background-color]="buttonColor" name="volume-up" danger item-right (click) = "loadAudio(word.id)"></ion-icon>
       <h2>{{word.word}}</h2>
       <h3>Meaning: {{word.meaning}} </h3>
     </ion-item>
