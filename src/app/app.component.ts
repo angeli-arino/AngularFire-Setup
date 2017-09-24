@@ -20,14 +20,14 @@ export class MyApp {
   public af: AngularFire) {
 
     const authObserver = af.auth.subscribe( user => {
-    if (user) {
-      this.rootPage = TabsPage;
-      authObserver.unsubscribe();
-    } else {
-      this.rootPage = Login;
-      authObserver.unsubscribe();
-    }
-  });
+      if (user) {
+        this.rootPage = TabsPage;
+        authObserver.unsubscribe();
+      } else {
+        this.rootPage = Login;
+        authObserver.unsubscribe();
+      }
+    });
 
 
     platform.ready().then(() => {

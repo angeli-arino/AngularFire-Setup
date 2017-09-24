@@ -27,9 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthData } from '../providers/auth-data';
 
 // Import the AF2 Module
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireOfflineModule } from 'angularfire2-offline';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 // AF2 Settings
 export const firebaseConfig = {
@@ -68,8 +66,6 @@ const myFirebaseAuthConfig = {
     TravelinfoModule,
     WordModule,
     SignupModule,
-    AngularFireDatabaseModule,
-    AngularFireOfflineModule,
     AngularFireModule.initializeApp(firebaseConfig,
     myFirebaseAuthConfig)
   ],
