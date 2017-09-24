@@ -19,15 +19,16 @@
     <ion-fab mini right edge>
     <button ion-fab mini><ion-icon name="add"></ion-icon></button>
     <ion-fab-list side = "left">
-      <button ion-fab><ion-icon name="locate"></ion-icon></button>
+      <button ion-fab (click) = "map(contact.address)"><ion-icon name="locate"></ion-icon></button>
       <button ion-fab (click) = "callNumber(contact.phone)"><ion-icon name="call"></ion-icon></button>
-      <button ion-fab><ion-icon name="mail"></ion-icon></button>
+      <button ion-fab (click) = "email(contact.email)"><ion-icon name="mail"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
       <ion-icon name="book" danger item-left></ion-icon>
       <h2>{{contact.name}}</h2>
-      <h3>Address: {{contact.email}} </h3>
+      <h3>Email Address: {{contact.email}} </h3>
       <p>Phone: {{contact.phone}}</p>
+      <p>Address: {{contact.address}} </p>
     </ion-item>
 
     <ion-list-header><h2>My Contacts</h2></ion-list-header>

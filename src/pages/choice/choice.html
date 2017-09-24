@@ -20,12 +20,9 @@
     </ion-card-content>
   </ion-card>
 
-    <ion-card *ngFor="let travelPlan of travelPlanList | async" type = "button" (click) = "loadTravelPlan(travelPlan)">
+    <ion-card *ngFor="let travelPlan of travelPlanList | async" type = "button" (click) = "checkAuth(travelPlan, travelPlan.code)">
     <img src="img/airplane.jpg"/>
     <div class="card-title">{{travelPlan.id}}</div>
     <div class="card-subtitle">{{travelPlan.dateFrom}} to {{travelPlan.dateTo}}</div>
     </ion-card>
-
-
-
 </ion-content>
