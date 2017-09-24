@@ -3,10 +3,10 @@ import { NavController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-alert',
+  templateUrl: 'alert.html'
 })
-export class AboutPage {
+export class AlertPage {
   alertList: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public af: AngularFire) {
