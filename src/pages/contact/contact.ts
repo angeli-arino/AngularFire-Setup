@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import {
-  AngularFireOfflineDatabase,
-  AfoListObservable,
-  AfoObjectObservable } from 'angularfire2-offline/database';
 
 import { AddContact } from '../add-contact/add-contact';
 
@@ -16,11 +12,14 @@ declare var window;
 })
 export class ContactPage {
   id;
-  contactList: AfoListObservable<any[]>;
-  keyContacts: AfoListObservable<any[]>;
+  start;
+  finalContacts = [];
+  contactList: FirebaseListObservable<any>;
+  keyContacts: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public af: AngularFireOfflineDatabase,
+  constructor(public navCtrl: NavController, public af: AngularFire,
   public navParams: NavParams, public alertController: AlertController, public platform: Platform) {
+  this.start = "";
     this.id = navParams.get('travelID');
     this.contactList = af.database.list('/contacts');
     this.keyContacts = af.database.list('/keyContacts', {
