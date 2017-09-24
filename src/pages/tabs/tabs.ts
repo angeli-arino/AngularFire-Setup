@@ -3,7 +3,7 @@ import { NavParams } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
 
 
-import { AboutPage } from '../about/about';
+import { AlertPage } from '../alert/alert';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { Choice } from '../choice/choice';
@@ -20,7 +20,7 @@ export class TabsPage {
   tab1Params = {travelID: ""};
   tab2Root = ContactPage;
   tab2Params = {travelID: ""};
-  tab3Root = AboutPage;
+  tab3Root = AlertPage;
 
   constructor(public navParams: NavParams, public navCtrl: NavController, public app: App) {
     this.tab1Params.travelID = this.navParams.get('travelID');
