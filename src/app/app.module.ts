@@ -7,15 +7,19 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage, PopoverPage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { AddContact } from '../pages/add-contact/add-contact';
-import { Login } from '../pages/login/login';
-import { ResetPassword } from '../pages/reset-password/reset-password';
-import { SignupPage } from '../pages/signup/signup';
-import { Choice } from '../pages/choice/choice';
-import { Info } from '../pages/info/info';
-import { Risk } from '../pages/risk/risk';
-import { CountryPage } from '../pages/country-page/country-page';
 
+//Import Pages
+import { AddContactModule } from '../pages/add-contact/add-contact.module';
+import { ChoiceModule } from '../pages/choice/choice.module';
+import { CountryPageModule } from '../pages/country-page/country-page.module';
+import { InfoModule } from '../pages/info/info.module';
+import { LingoModule } from '../pages/lingo/lingo.module';
+import { LoginModule } from '../pages/login/login.module';
+import { ResetPasswordModule } from '../pages/reset-password/reset-password.module';
+import { RiskModule } from '../pages/risk/risk.module';
+import { SignupModule } from '../pages/signup/signup.module';
+import { TravelinfoModule } from '../pages/travelinfo/travelinfo.module';
+import { WordModule } from '../pages/word/word.module';
 
 //Import Providers
 import { StatusBar } from '@ionic-native/status-bar';
@@ -46,19 +50,22 @@ const myFirebaseAuthConfig = {
     ContactPage,
     HomePage,
     TabsPage,
-    AddContact,
-    Login,
-    ResetPassword,
-    SignupPage,
     PopoverPage,
-    Choice,
-    Info,
-    Risk,
-    CountryPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AddContactModule,
+    ChoiceModule,
+    InfoModule,
+    LingoModule,
+    RiskModule,
+    ResetPasswordModule,
+    LoginModule,
+    CountryPageModule,
+    TravelinfoModule,
+    WordModule,
+    SignupModule,
     AngularFireModule.initializeApp(firebaseConfig,
     myFirebaseAuthConfig)
   ],
@@ -69,15 +76,7 @@ const myFirebaseAuthConfig = {
     ContactPage,
     HomePage,
     TabsPage,
-    AddContact,
-    Login,
-    ResetPassword,
-    SignupPage,
     PopoverPage,
-    Choice,
-    Info,
-    Risk,
-    CountryPage
   ],
   providers: [
     StatusBar,

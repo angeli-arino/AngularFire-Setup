@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'page-info',
@@ -7,6 +8,11 @@ import { ModalController, Platform, NavParams, ViewController } from 'ionic-angu
 })
 
 export class Info {
+
+  allinfoList: FirebaseListObservable<any>;
+  infoList;
+  id;
+
   currentInfo;
   myInfo = [
           {
@@ -66,15 +72,21 @@ export class Info {
 
         ];
 
-  constructor(public modalCtrl: ModalController, public navParams: NavParams) {
-
+  constructor(public modalCtrl: ModalController, public navParams: NavParams, public af: AngularFire) {
+    this.allinfoList = af.database.list('/travelInfo');
+    this.id = this.navParams.get('travelID');
+    this.allinfoList = af.database.list('/travelInfo', {
+      query: {
+        orderByChild : 'travelID',
+        equalTo: this.id
+        }
+      });
   }
 
-  openModal(numGiven) {
-    this.currentInfo = this.myInfo[Number(numGiven*1)];
-    console.log(this.currentInfo);
+  openModal(info) {
+    this.infoList = { title: info.travel, details: info.travelInfo };
 
-    const myModal = this.modalCtrl.create('ModalPage', { data : this.currentInfo});
+    const myModal = this.modalCtrl.create('ModalPage', { data : this.infoList});
     myModal.present();
   }
 }

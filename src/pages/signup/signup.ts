@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController, AlertController } from 'ionic-angular';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 import { EmailValidator } from '../../validators/email';
+import { matchingPasswords } from '../../validators/password';
 import { TabsPage } from '../tabs/tabs';
 
 @Component({
@@ -10,7 +11,7 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-  public signupForm;
+  public signupForm: FormGroup;
   loading;
 
   constructor(public nav: NavController, public authData: AuthData,
@@ -19,15 +20,15 @@ export class SignupPage {
 
     this.signupForm = formBuilder.group({
       email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
-      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
-    });
+      password: ['', Validators.compose([Validators.minLength(6), Validators.required])],
+      confirmPassword: ['', Validators.required],
+    }, {validator: matchingPasswords('password', 'confirmPassword')})
   }
 
   /**
    * If the form is valid it will call the AuthData service to sign the user up password displaying a loading
    *  component while the user waits.
-   *
-   * If the form is invalid it will just log the form value, feel free to handle that as you like.
+   * If the form is invalid it will just log the form value.
    */
   signupUser(){
     if (!this.signupForm.valid){

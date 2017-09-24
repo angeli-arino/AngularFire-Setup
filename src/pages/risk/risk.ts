@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController, Platform, ViewController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /**
  * Generated class for the Risk page.
@@ -13,6 +14,9 @@ import { ModalController, Platform, ViewController, IonicPage, NavController, Na
 })
 export class Risk {
   currentRisk;
+  allriskList: FirebaseListObservable<any>;
+  id;
+
   myRisk = [
     {
       name: 'NZ Safe Travel Advisory',
@@ -24,12 +28,19 @@ export class Risk {
       },
   ];
 
-  constructor(public modalCtrl: ModalController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController, public navParams: NavParams, public af: AngularFire) {
+    this.allriskList = af.database.list('/riskInfo');
+    this.id = navParams.get('travelID');
+    this.allriskList = af.database.list('/riskInfo', {
+      query: {
+        orderByChild : 'travelID',
+        equalTo: this.id
+        }
+      });
   }
 
-  openModal(numGiven) {
-    this.currentRisk = this.myRisk[Number(numGiven*1)];
-
+  openModal(risk) {
+    this.currentRisk = { title: risk.risk, details: risk.riskInfo };
     const myModal = this.modalCtrl.create('ModalPage', { data : this.currentRisk});
     myModal.present();
   }

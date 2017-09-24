@@ -13,57 +13,25 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header><h1>Key Contacts</h1></ion-list-header>
+    <ion-list-header><h2>Key Contacts</h2></ion-list-header>
 
-    <ion-item (click) = "callNumber(0275095398)">
+    <ion-item *ngFor="let contact of keyContacts | async">
+    <ion-fab mini right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side = "left">
+      <button ion-fab (click) = "map(contact.address)"><ion-icon name="locate"></ion-icon></button>
+      <button ion-fab (click) = "callNumber(contact.phone)"><ion-icon name="call"></ion-icon></button>
+      <button ion-fab (click) = "email(contact.email)"><ion-icon name="mail"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
       <ion-icon name="book" danger item-left></ion-icon>
-      <h2>Stephen Hardman, Activity Leader</h2>
-      <h3>Email: stephen.hardman@canterbury.ac.nz </h3>
-      <p>Phone: +64 (0)27 509 5398</p>
+      <h2>{{contact.name}}</h2>
+      <h3>Email Address: {{contact.email}} </h3>
+      <p>Phone: {{contact.phone}}</p>
+      <p>Address: {{contact.address}} </p>
     </ion-item>
 
-    <ion-item (click) = "callNumber(0274352375)">
-      <ion-icon name="book" danger item-left></ion-icon>
-      <h2>Will Shannon, Activity Leader</h2>
-      <h3>Email: will.shannon@canterbury.ac.nz </h3>
-      <p>Phone: +64 (0)27 435 2375</p>
-    </ion-item>
-
-    <ion-item (click) = "callNumber(0275095398)">
-      <ion-icon name="book" danger item-left></ion-icon>
-      <h2>Chantarath Hongboontri, Activity Leader</h2>
-      <h3>Email:  chantarath.hon@mahidol.edu </h3>
-      <p>Phone: +66 (0)97 316 0788</p>
-    </ion-item>
-
-    <ion-item (click) = "callNumber(0275095398)">
-      <ion-icon name="book" danger item-left></ion-icon>
-      <h2>Jacqui Lyttle, Senior Risk & Insurance Advisor</h2>
-      <p>Phone: +64 (0)21 952 831</p>
-    </ion-item>
-
-    <ion-item (click) = "callNumber(1155)">
-      <ion-icon name="book" danger item-left></ion-icon>
-      <h2>Tourist Police</h2>
-      <p>Phone: 1155</p>
-    </ion-item>
-
-    <ion-item (click) = "callNumber(1155)">
-      <ion-icon name="book" danger item-left></ion-icon>
-      <h2>Police (General Emergency Call)</h2>
-      <p>Phone: 191</p>
-    </ion-item>
-
-    <ion-item (click) = "callNumber(1554)">
-      <ion-icon name="book" danger item-left></ion-icon>
-      <h2>Ambulance and Rescue</h2>
-      <p>Phone: 1554</p>
-    </ion-item>
-
-
-
-
-    <ion-list-header><h1>My Contacts</h1></ion-list-header>
+    <ion-list-header><h2>My Contacts</h2></ion-list-header>
     <ion-item *ngFor="let contact of contactList | async"
     (click) = "callNumber(contact.phone)">
       <ion-icon name="book" danger item-left></ion-icon>

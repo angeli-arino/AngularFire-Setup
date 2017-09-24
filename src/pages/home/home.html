@@ -1,33 +1,36 @@
 <ion-header>
   <ion-navbar color = "primary">
     <ion-title>UCIRO Health and Safety</ion-title>
-
-      <ion-buttons end>
-        <button ion-button icon-only (click) = "logout()">
-          <ion-icon name="settings"></ion-icon>
-        </button>
-      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content class = "card-background-page">
 
-      <ion-card type = "button" (click) = showCountry()>
+      <ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="settings"></ion-icon></button>
+    <ion-fab-list>
+     <button ion-fab (click) = "logout()"><ion-icon name="log-out"></ion-icon></button>
+     <button ion-fab (click) = "showChoice()"><ion-icon name="bookmarks"></ion-icon></button>
+    </ion-fab-list>
+    </ion-fab>
+
+      <ion-card type = "button" (click) = showTravelInfo()> 
         <ion-card-header>
-          THAILAND
+          {{id}}
         </ion-card-header>
       </ion-card>
 
-      <ion-card type = "button" (click) = showInfo()>
-        <ion-card-header>
-          Important Travel Information
-        </ion-card-header>
-        <ion-card-content>
-          Several key points about travelling that you need to remember.
-        </ion-card-content>
-      </ion-card>
+        <ion-card class = "card-info" type = "button" (click) = showInfo()>
+          <ion-card-header>
+            Important Travel Information
+          </ion-card-header>
+          <ion-card-content>
+            Several key points about travelling that you need to remember.
+          </ion-card-content>
+        </ion-card>
 
-      <ion-card type = "button" (click) = showRisks()>
+
+      <ion-card class = "card-risk" type = "button" (click) = showRisks()>
         <ion-card-header>
           Risk Identification and Management
         </ion-card-header>
@@ -36,7 +39,7 @@
         </ion-card-content>
       </ion-card>
 
-      <ion-card type = "button" (click) = showLingo()>
+      <ion-card class = "card-lingo" type = "button" (click) = showLingo()>
         <ion-card-header>
           Local Lingo
         </ion-card-header>
