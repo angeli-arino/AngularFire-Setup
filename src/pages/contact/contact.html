@@ -4,9 +4,11 @@
       Contact
     </ion-title>
     <ion-buttons end>
+      <!--
       <button ion-button icon-only (click)="addContact()">
         <ion-icon name="add"></ion-icon>
       </button>
+    -->
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -30,7 +32,7 @@
       <p>Phone: {{contact.phone}}</p>
       <p>Address: {{contact.address}} </p>
     </ion-item>
-
+<!--TODO
     <ion-list-header><h2>My Contacts</h2></ion-list-header>
     <ion-item *ngFor="let contact of contactList | async"
     (click) = "callNumber(contact.phone)">
@@ -39,5 +41,6 @@
       <h3>Address: {{contact.address}}, {{contact.city}}</h3>
       <p>Phone: {{contact.phone}}</p>
     </ion-item>
+  -->
   </ion-list>
 </ion-content>

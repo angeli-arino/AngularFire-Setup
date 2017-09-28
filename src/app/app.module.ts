@@ -28,6 +28,7 @@ import { AuthData } from '../providers/auth-data';
 
 // Import the AF2 Module
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFireOfflineModule } from 'angularfire2-offline';
 
 // AF2 Settings
 export const firebaseConfig = {
@@ -66,6 +67,7 @@ const myFirebaseAuthConfig = {
     TravelinfoModule,
     WordModule,
     SignupModule,
+    AngularFireOfflineModule,
     AngularFireModule.initializeApp(firebaseConfig,
     myFirebaseAuthConfig)
   ],

@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
+import {
+  AfoListObservable,
+  AfoObjectObservable,
+  AngularFireOffline } from 'angularfire2-offline';
+
 //Pages
 import { TabsPage } from '../tabs/tabs';
 
@@ -11,10 +16,10 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'choice.html',
 })
 export class Choice {
-  travelPlanList: FirebaseListObservable<any>;
+  travelPlanList: AfoListObservable<any[]>;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireOffline, public alertCtrl: AlertController) {
     this.travelPlanList = af.database.list('/tripPlan');
   }
 

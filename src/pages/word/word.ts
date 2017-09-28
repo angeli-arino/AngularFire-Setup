@@ -3,6 +3,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import firebase from 'firebase';
 
+import {
+  AfoListObservable,
+  AfoObjectObservable,
+  AngularFireOffline } from 'angularfire2-offline';
+
 /**
  * Generated class for the Word page.
  *
@@ -16,13 +21,12 @@ import firebase from 'firebase';
 })
 export class Word {
   language;
-  wordList: FirebaseListObservable<any>;
+  wordList: FirebaseListObservable<(any)>;
   audioElement;
   buttonColor;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
     this.language = this.navParams.get('language');
-    console.log(this.language);
     this.wordList = af.database.list('/localLingo', {
       query: {
         orderByChild : 'language',
