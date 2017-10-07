@@ -75,6 +75,11 @@ export class Choice {
     alert.present();
   }
 
+  formatDate(val) {
+    var date = new Date(val);
+    return date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
+  }
+
   //Loads the Travel Plan
   loadTravelPlan(travelPlan) {
     localStorage.setItem("travelID", travelPlan.id);

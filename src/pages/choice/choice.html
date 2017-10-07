@@ -5,14 +5,6 @@
 </ion-header>
 
 <ion-content class="card-background">
-  <ion-card>
-    <ion-card-header>
-      Welcome to UCIRO Health and Safety App!
-    </ion-card-header>
-    <ion-card-content>
-      Please Select a Trip from the following
-    </ion-card-content>
-  </ion-card>
 
     <ion-card *ngFor="let travelPlan of travelPlanList | async" type = "button" (click) = "checkAuth(travelPlan, travelPlan.code)">
     <img src="img/airplane.jpg"/>

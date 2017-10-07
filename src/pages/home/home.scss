@@ -9,18 +9,6 @@ page-home {
   text-align: center;
 }
 
-.card-info {
-  background: #f9fbe7;
-}
-
-.card-risk {
-  background: #ffebee;
-}
-
-.card-lingo {
-  background: #e8f5e9;
-}
-
   .card-background-page {
 
     background-color: #F4F4F7;
@@ -29,10 +17,9 @@ page-home {
       font-weight: bold;
     }
 
-
     ion-card {
       position: center;
-      text-align: center;
+      text-align: left;
 
     }
 
